@@ -53,7 +53,7 @@ function App() {
     }
 
     alert('Form submitted successfully!');
-    setOpen(false);
+    handleClose();
     setUser ('');
     setEmail('');
     setPhone('');
@@ -84,7 +84,7 @@ function App() {
         style={{
           content: {
             width: '60%',
-            height: '59%',
+            height: 'auto',
             margin: 'auto',
             padding: '20px',
             borderRadius: '8px',
@@ -98,11 +98,11 @@ function App() {
         <>
           <h1 style={{ textAlign: "center" }}>Fill Details</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor='name'><strong>UserName:</strong></label>
+            <label htmlFor='username'><strong>UserName:</strong></label>
             <br />
             <input
               type="text"
-              id="name"
+              id="username"
               value={user}
               onChange={(e) => setUser (e.target.value)}
               style={{ width: '90%', height: '40px', marginBottom: '10px' }}
@@ -120,11 +120,11 @@ function App() {
               required
             />
             <br />
-            <label htmlFor='ph'><strong>Phone Number:</strong></label>
+            <label htmlFor='phone'><strong>Phone Number:</strong></label>
             <br />
             <input
               type="text"
-              id="ph"
+              id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               style={{ width: '90%', height: '40px', marginBottom: '10px' }}
@@ -144,6 +144,7 @@ function App() {
             <br />
             <button
               type='submit'
+              className="submit-button"
               style={{
                 alignContent: "center",
                 backgroundColor: "blue",
